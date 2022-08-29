@@ -1,10 +1,14 @@
 #!/usr/bin/python3
-def multiple_returns(sentence):
-    len_sen = len(sentence)
+def max_integer(my_list=[]):
+    length = len(my_list)
 
-    if (len_sen == 0):
-        new_tuple = (len_sen, None)
-    else:
-        new_tuple = (len_sen, sentence[0])
+    if length == 0:
+        return (None)
 
-    return (new_tuple)
+    max_int = my_list[0]
+
+    for i in range(1, length):
+        if my_list[i] > max_int:
+            max_int = my_list[i]
+
+    return (max_int)
