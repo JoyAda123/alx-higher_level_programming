@@ -1,16 +1,30 @@
 #!/usr/bin/python3
-print_square = __import__('4-print_square').print_square
+"""
 
-print_square(4)
-print("")
-print_square(10)
-print("")
-print_square(0)
-print("")
-print_square(1)
-print("")
-try:
-    print_square(-1)
-except Exception as e:
-    print(e)
-print("")
+This module is composed by a function that prints a square with the character #
+
+"""
+
+
+def print_square(size):
+    """ Function that prints a square with the character #
+
+    Args:
+        size: size of the square printed
+
+    Returns:
+        No return
+
+    Raises:
+        TypeError: If size is not an integer number
+
+
+    """
+
+    if not isinstance(size, int):
+        raise TypeError("size must be an integer")
+    if size < 0:
+        raise ValueError("size must be >= 0")
+
+    for i in range(size):
+        print("#" * size)
